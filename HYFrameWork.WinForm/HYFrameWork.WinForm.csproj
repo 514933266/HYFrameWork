@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2079657F-A30E-4893-815E-87B5647F1651}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HYFrameWork.WinForm</RootNamespace>
+    <AssemblyName>HYFrameWork.WinForm</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\HY框架Dll\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DocumentationFile>bin\Debug\HYFrameWork.WinForm.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Optimize>false</Optimize>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WebKitBrowser, Version=0.5.0.0, Culture=neutral, PublicKeyToken=b967213f6d29a3be, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\HYFrameWork.Libs\WebKit.NET-0.5-bin-cairo\WebKitBrowser.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Active\Agreement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Active\Agreement.Designer.cs">
+      <DependentUpon>Agreement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Active\Program.cs" />
+    <Compile Include="Computer\FormHandle.cs" />
+    <Compile Include="Computer\IPAddress.cs" />
+    <Compile Include="Computer\WindowMsg.cs" />
+    <Compile Include="Controls\DataGridViewProgressCell.cs" />
+    <Compile Include="Controls\DataGridViewProgressColumn.cs" />
+    <Compile Include="Controls\IBrowser.cs" />
+    <Compile Include="Controls\IEBrowser.cs" />
+    <Compile Include="Common\BaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Computer\ComputerInfo.cs" />
+    <Compile Include="Computer\Fonts.cs" />
+    <Compile Include="Computer\Running.cs" />
+    <Compile Include="Config\AppConfigHelper.cs" />
+    <Compile Include="Controls\Commons.cs" />
+    <Compile Include="Controls\ISizeabel.cs" />
+    <Compile Include="Controls\Lists.cs" />
+    <Compile Include="Controls\DiaLogs.cs" />
+    <Compile Include="Controls\Mp3Player.cs" />
+    <Compile Include="Controls\PagerControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\PagerControl.designer.cs">
+      <DependentUpon>PagerControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SplitContainerControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\SplitContainerControl.Designer.cs">
+      <DependentUpon>SplitContainerControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Statusstrip.cs" />
+    <Compile Include="Controls\Tree\TreeGridCell.cs" />
+    <Compile Include="Controls\Tree\TreeGridEvents.cs" />
+    <Compile Include="Controls\Tree\TreeGridNode.cs" />
+    <Compile Include="Controls\Tree\TreeGridNodeCollection.cs" />
+    <Compile Include="Controls\Tree\TreeGridView.cs" />
+    <Compile Include="Controls\ChromeBrowser.cs" />
+    <Compile Include="Extensions\ButtonExtension.cs" />
+    <Compile Include="Extensions\ComboBoxExtension.cs" />
+    <Compile Include="Extensions\DatagridviewExtension.cs" />
+    <Compile Include="Extensions\FormExtension.cs" />
+    <Compile Include="Extensions\LabelExtension.cs" />
+    <Compile Include="Extensions\PictureBoxExtension.cs" />
+    <Compile Include="Extensions\TextBoxExtension.cs" />
+    <Compile Include="Extensions\Toos.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Socket\SocketHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Active\Agreement.resx">
+      <DependentUpon>Agreement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\PagerControl.resx">
+      <DependentUpon>PagerControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Tree\TreeGridView.resx">
+      <DependentUpon>TreeGridView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Active\App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Active\assistant_64px_1126121_easyicon.net.ico" />
+    <Content Include="Active\Image\agreement1.png" />
+    <Content Include="Active\Image\assistant_64px_1126121_easyicon.net.ico" />
+    <Content Include="Active\lol_smile_128px_12737_easyicon.net.ico" />
+    <Content Include="Controls\images\edit_add.png" />
+    <Content Include="Controls\images\first.png" />
+    <Content Include="Controls\images\last.png" />
+    <Content Include="Controls\images\next.png" />
+    <Content Include="Controls\images\previous.png" />
+    <Content Include="Controls\images\refresh.png" />
+    <Content Include="Controls\images\pencil.png" />
+    <Content Include="Controls\images\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HYFrameWork.Core\HYFrameWork.Core.csproj">
+      <Project>{02d16f60-649a-4a22-8b29-440698a46754}</Project>
+      <Name>HYFrameWork.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HYFrameWork.File\HYFrameWork.File.csproj">
+      <Project>{35894327-219f-4c71-bc03-c32e088cac2c}</Project>
+      <Name>HYFrameWork.File</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

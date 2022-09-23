@@ -1,0 +1,1 @@
+OneForAll.Core框架前身：基于.NeT Framework 4.5

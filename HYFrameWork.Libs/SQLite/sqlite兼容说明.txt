@@ -1,0 +1,17 @@
+言归正传，如果要使用“Any CPU”的System.Data.SQLite.dll，就必须使用不带“bundle”字样，即非混合编译的二进制包。
+
+ 
+
+　 　非混合编译的二进制包有System.Data.SQLite.dll和SQLite.Interop.dll两个动态库。按官方说 明，SQLite.Interop.dll是可以放与System.Data.SQLite.dll相同的目录下，也可以放在x86或x64子目录下，由 System.Data.SQLite.dll根据系统类型调用。为了确认，下载如下两个包来进行比较：
+
+
+
+    sqlite-netFx40-binary-Win32-2010-1.0.93.0.zip
+
+    sqlite-netFx40-binary-x64-2010-1.0.93.0.zip
+
+
+结果发现只有SQLite.Interop.*不同，其它文件都完全相同
+然后将两个包的SQLite.Interop.*分别放在x86和x64子目录下，合并成一个包。再在不同类型的系统下运行test.exe，结果都是完全通过
+
+最后需要做的就是在Visual Studio项目中引用System.Data.SQLite.dll，再将x86\SQLite.Interop.dll和x64 \SQLite.Interop.dll拷贝到项目根目录，包含在项目中，在属性中设置“如果较新则复制”或“始终复制”。生成结果就像这样：

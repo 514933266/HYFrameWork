@@ -1,0 +1,100 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    >
+    <!-- #深蓝-->
+    <LinearGradientBrush x:Key="deep-blue" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#006fb0" Offset="0"/>
+    </LinearGradientBrush>
+    <!-- #天蓝-->
+    <LinearGradientBrush x:Key="sky-blue" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#2FB3FF" Offset="0"/>
+    </LinearGradientBrush>
+    <!-- #深天蓝-->
+    <LinearGradientBrush x:Key="sky-deep-blue" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#317ef3" Offset="0"/>
+    </LinearGradientBrush>
+    <!-- #深天蓝-->
+    <LinearGradientBrush x:Key="sky-dark-blue" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#3075dc" Offset="0"/>
+    </LinearGradientBrush>
+    <!-- #水晶蓝-->
+    <LinearGradientBrush x:Key="crystal-blue" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#66CFECFC" Offset="0"/>
+    </LinearGradientBrush>
+    <!-- #深水晶蓝-->
+    <LinearGradientBrush x:Key="crystal-deep-blue" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#332FB3FF" Offset="0"/>
+    </LinearGradientBrush>
+    <!-- #中间往左右渐变水晶蓝-->
+    <LinearGradientBrush x:Key="shadow-crystal-blue" EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+        <GradientStop Color="#19C4D9F5" Offset="0.941"/>
+        <GradientStop Color="#7FC4D9F5" Offset="0.741"/>
+        <GradientStop Color="#7FC4D9F5" Offset="0.297"/>
+        <GradientStop Color="#19C4D9F5" Offset="0.109"/>
+    </LinearGradientBrush>
+    <!-- #白色-->
+    <LinearGradientBrush x:Key="milk-white" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#FFF" Offset="0"/>
+    </LinearGradientBrush>
+    <!-- #水晶白-->
+    <LinearGradientBrush x:Key="light-crystal-white" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#0CFFFFFF" Offset="0.209"/>
+        <GradientStop Color="#19FFFFFF" Offset="0.435"/>
+        <GradientStop Color="#33FFFFFF" Offset="0.753"/>
+    </LinearGradientBrush>
+    <!-- #草绿色-->
+    <LinearGradientBrush x:Key="grass-green" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#2BDC72" Offset="0"/>
+    </LinearGradientBrush>
+    <!-- #亮草绿色-->
+    <LinearGradientBrush x:Key="light-grass-green" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#22E783" Offset="0"/>
+    </LinearGradientBrush>
+    <!-- #暗草绿色-->
+    <LinearGradientBrush x:Key="dark-grass-green" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#1BCE69" Offset="0"/>
+    </LinearGradientBrush>
+    <!-- #浅黑色-->
+    <LinearGradientBrush x:Key="light-black" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#444444" Offset="0"/>
+    </LinearGradientBrush>
+    <!-- #浅灰色-->
+    <LinearGradientBrush x:Key="light-gray" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#8E8E8E" Offset="0"/>
+    </LinearGradientBrush>
+    <!-- #淡灰色-->
+    <LinearGradientBrush x:Key="light-gray-2" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#7FD8D8D8" Offset="0"/>
+    </LinearGradientBrush>
+    <!-- #中间往左右渐变灰-->
+    <LinearGradientBrush x:Key="shadow-gray" EndPoint="1,1" MappingMode="RelativeToBoundingBox" StartPoint="0,0">
+        <GradientStop Color="#19484F59" Offset="0.941"/>
+        <GradientStop Color="#7F2E3640" Offset="0.741"/>
+        <GradientStop Color="#7F4D5157" Offset="0.297"/>
+        <GradientStop Color="#19636B76" Offset="0.109"/>
+    </LinearGradientBrush>
+    <!-- #上下渐变灰-->
+    <LinearGradientBrush x:Key="line-shadow-ray" EndPoint="1,1" MappingMode="RelativeToBoundingBox" StartPoint="0,0">
+        <GradientStop Color="#19484F59" Offset="0.921"/>
+        <GradientStop Color="#192E3640" Offset="0.799"/>
+        <GradientStop Color="#334D5157" Offset="0.192"/>
+    </LinearGradientBrush>
+    <!-- #水晶灰-->
+    <LinearGradientBrush x:Key="crystal-gray" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#F3F7F9" Offset="0.799"/>
+        <GradientStop Color="#19F3F7F9" Offset="0.611"/>
+    </LinearGradientBrush>
+    <!-- #浅水晶黑-->
+    <LinearGradientBrush x:Key="light-light-crystal-black" EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+        <GradientStop Color="#4CF7F1F1" Offset="1"/>
+        <GradientStop Color="#19F9F5F5" Offset="0.259"/>
+        <GradientStop Color="#33FBF5F5" Offset="0.623"/>
+        <GradientStop Color="#0CF9F5F5" Offset="0.038"/>
+    </LinearGradientBrush>
+    <!-- #半透明黑-->
+    <SolidColorBrush x:Key="translucent-black" Color="#66060606"/>
+    <!--玛瑙红-->
+    <SolidColorBrush x:Key="translucent-red" Color="#66F90404"/>
+    <!-- 近白黄-->
+    <SolidColorBrush x:Key="white-yellow" Color="#FAFAFA"></SolidColorBrush>
+</ResourceDictionary>

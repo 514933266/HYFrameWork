@@ -1,0 +1,139 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:HYFrameWork.WPF.UserControls">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary  Source="pack://application:,,,/HYFrameWork.WPF;component/UserControls/HYButton.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    <!--文本框模板-->
+    <ControlTemplate x:Key="base-hy-textbox" TargetType="{x:Type local:HYTextBox}" >
+        <Border x:Name="border"
+                            Background="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Background}"
+                            Height="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=Height}" 
+                            CornerRadius="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=Radius}" 
+                            BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}"
+                            Width="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=Width}"
+                            VerticalAlignment="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=VerticalAlignment}"
+                            HorizontalAlignment="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=HorizontalAlignment}"
+                            >
+            
+                <Canvas>
+                <Grid>
+                <!--文本框-->
+                    <TextBox x:Name="txtbox" Canvas.Left="0"  BorderThickness="0"
+                        Cursor="{TemplateBinding Cursor}"
+                        IsEnabled="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=TextIsEnable}"
+                        Margin="{TemplateBinding Padding}"
+                        HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                        VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                        Height="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=TextBoxHeight}" 
+                        Width="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=TextBoxWidth}"
+                        TextWrapping="NoWrap"
+                        Text="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=Text,Mode=TwoWay}"
+                             >
+                </TextBox>
+                <!--水印-->
+                <TextBlock
+                        Canvas.Left="0"
+                         IsHitTestVisible="False"
+                         Background="Transparent" 
+                         Foreground="#a5a5a5" 
+                         HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                         VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                         Text="{Binding RelativeSource={RelativeSource Mode=TemplatedParent},Path=WaterRemark}"
+                         FontSize="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=FontSize}"
+                         >
+                    <TextBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="Visibility" Value="Collapsed"/>
+                            <Style.Triggers>
+                                <MultiDataTrigger >
+                                    <MultiDataTrigger.Conditions>
+                                        <Condition Binding="{Binding Text, ElementName=txtbox}" Value=""></Condition>
+                                        <Condition Binding="{Binding IsFocused, ElementName=txtbox}" Value="False"></Condition>
+                                    </MultiDataTrigger.Conditions>
+                                    <Setter Property="Visibility" Value="Visible"/>
+                                </MultiDataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
+                </Grid>
+                <local:HYButton x:Name="icon"
+                                Canvas.Right="0"
+                                Template="{StaticResource Base-HY-Button}"
+                                Margin="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=ImageMargin}"
+                                Width="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=ImageWidth}"
+                                Height="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=ImageHeight}"
+                                VerticalAlignment="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=VerticalContentAlignment}"
+                                VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                                MouseOverBackground="Transparent"
+                                IsTextVisibility="Collapsed"
+                                FontSize="0"
+                                MousePressedBackground="Transparent"
+                                Cursor="Arrow"
+                                Padding="0"
+                                Background="Transparent"
+                                BorderBrush="Red"
+                                BorderThickness="0"
+                                Content=""
+                                ImageWidth="{TemplateBinding ImageWidth}"
+                                ImageHeight="{TemplateBinding ImageHeight}"
+                                ImageStretch="{TemplateBinding ImageStretch}"
+                                Icon="{TemplateBinding Icon}"
+                                Hover="{TemplateBinding Hover}"
+                                Pressed="{TemplateBinding Pressed}"
+                                Command="{TemplateBinding Command}"
+                                CommandParameter="{TemplateBinding CommandParameter}"
+                                >
+                </local:HYButton>
+            </Canvas>
+        </Border>
+        <ControlTemplate.Triggers>
+            <!--设置鼠标进入时的背景、前景样式-->
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, 
+                                Path=MouseOverBackground}" TargetName="border" />
+                <Setter Property="BorderBrush" Value="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, 
+                                Path=MouseOverBorderBrush}" TargetName="border"/>
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="false">
+                <Setter  Property="Icon" Value="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, 
+                                Path=IsEnableImage}" TargetName="icon" />
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    <!--图标在左边-->
+    <Style x:Key="icon-hy-textbox" TargetType="{x:Type local:HYTextBox}" >
+        <Setter Property="Template" Value="{StaticResource base-hy-textbox}"></Setter>
+        <Setter Property="Width" Value="200"/>
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="Margin" Value="10 0 0 0"/>
+        <Setter Property="MouseOverBorderBrush" Value="#2FB3FF"/>
+        <Setter Property="ImageHeight" Value="20"/>
+        <Setter Property="ImageWidth" Value="20"/>
+        <Setter Property="ImageMargin" Value="4"/>
+        <Setter Property="BorderBrush" Value="#7FD8D8D8"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="TextBoxWidth" Value="170"/>
+        <Setter Property="TextBoxHeight" Value="26"/>
+    </Style>
+    <!--无图标 纯水印文本框-->
+    <Style x:Key="water-hy-textbox" TargetType="{x:Type local:HYTextBox}" >
+        <Setter Property="Template" Value="{StaticResource base-hy-textbox}"></Setter>
+        <Setter Property="Width" Value="80"/>
+        <Setter Property="Height" Value="26"/>
+        <Setter Property="Margin" Value="0 0 0 0"/>
+        <Setter Property="MouseOverBorderBrush" Value="#2FB3FF"/>
+        <Setter Property="ImageHeight" Value="0"/>
+        <Setter Property="ImageWidth" Value="0"/>
+        <Setter Property="ImageMargin" Value="0"/>
+        <Setter Property="BorderBrush" Value="#7FD8D8D8"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="TextBoxWidth" Value="80"/>
+        <Setter Property="TextBoxHeight" Value="24"/>
+    </Style>
+
+    <Style TargetType="{x:Type local:HYTextBox}" BasedOn="{StaticResource water-hy-textbox}"/>
+</ResourceDictionary>
